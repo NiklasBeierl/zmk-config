@@ -47,19 +47,41 @@
             tapping-term-ms = <150>;
             retro-tap;
         };
+
+        caps_word_lshift: caps_word_lshift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPS_WORD_LSHIFT";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&none>, <&caps_word>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        fd-esc {
-            bindings = <&kp ESCAPE>;
+        fd-brack {
+            bindings = <&kp LEFT_BRACKET>;
             key-positions = <28 27>;
         };
 
-        jk-esc {
-            bindings = <&kp ESCAPE>;
+        jk-brack {
+            bindings = <&kp RIGHT_BRACKET>;
             key-positions = <31 32>;
+        };
+
+        sd-brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <26 27>;
+        };
+
+        kl-brace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <32 33>;
+        };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <52 55>;
         };
     };
 
@@ -77,11 +99,11 @@
 
         default_layer {
             bindings = <
-&kp ESCAPE  &kp N1        &kp N2       &kp N3       &kp N4          &kp N5                                              &kp N6     &kp N7      &kp N8       &kp N9       &kp N0           &kp EQUAL
-&kp GRAVE   &kp Q         &kp W        &kp E        &kp R           &kp T                                               &kp Y      &kp U       &kp I        &kp O        &kp P            &kp BACKSLASH
-&none       &hml LCTRL A  &hml LGUI S  &hml LALT D  &kp F           &kp G                                               &kp H      &kp J       &hmr LALT K  &hmr LGUI L  &hmr RCTRL SEMI  &kp SQT
-&kp TAB     &kp Z         &kp X        &kp C        &kp V           &kp B      &kp LBKT            &kp RBKT             &kp N      &kp M       &kp COMMA    &kp DOT      &kp FSLH         &none
-                                       &none        &kp LEFT_SHIFT  &kp ENTER  &homo_takp 4 TAB    &homo_takp 3 ESCAPE  &kp SPACE  &kp RSHIFT  &none
+&none       &kp N1        &kp N2       &kp N3       &kp N4      &kp N5                                              &kp N6     &kp N7      &kp N8       &kp N9       &kp N0           &kp EQUAL
+&kp GRAVE   &kp Q         &kp W        &kp E        &kp R       &kp T                                               &kp Y      &kp U       &kp I        &kp O        &kp P            &kp BACKSLASH
+&kp ESCAPE  &hml LCTRL A  &hml LGUI S  &hml LALT D  &kp F       &kp G                                               &kp H      &kp J       &hmr LALT K  &hmr LGUI L  &hmr RCTRL SEMI  &kp SQT
+&none       &kp Z         &kp X        &kp C        &kp V       &kp B      &kp LBKT            &kp RBKT             &kp N      &kp M       &kp COMMA    &kp DOT      &kp FSLH         &none
+                                       &none        &kp LSHIFT  &kp ENTER  &homo_takp 4 TAB    &homo_takp 3 ESCAPE  &kp SPACE  &kp RSHIFT  &none
             >;
         };
 
