@@ -81,7 +81,7 @@
 
         caps_word {
             bindings = <&caps_word>;
-            key-positions = <52 55>;
+            key-positions = <51 56>;
         };
     };
 
